@@ -1,0 +1,27 @@
+﻿@model StockExampleApp.Entity.Product
+
+
+<form method="post" action="Edit">
+    <div class="mb-3">
+        <label for="" class="form-label">Ürün Id</label>
+        <input type="" class="form-control" asp-for="productId" value="@Model.productId" readonly>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Ürün İsmi</label>
+        <input type="" class="form-control" asp-for="productName" value="@Model.productName" readonly>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Ürün Adedi</label>
+        <input type="" class="form-control" asp-for="productQuantity" value="@Model.productQuantity" readonly>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Ürün Fiyatı</label>
+        <input type="number" class="form-control" asp-for="productPrice" value="@Model.productPrice" readonly>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Stoktan Dusulecek Adet</label>
+        <input type="number" class="form-control" name="dropQuantity" itemid="dropQuantity">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

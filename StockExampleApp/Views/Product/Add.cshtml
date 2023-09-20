@@ -1,0 +1,21 @@
+﻿@model StockExampleApp.Entity.Product
+
+
+<form method="post" action="Add">
+    
+    <div class="mb-3">
+        <label for="" class="form-label">Ürün İsmi</label>
+        <input type="" class="form-control" asp-for="productName">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Ürün Adedi</label>
+        <input type="" class="form-control" asp-for="productQuantity">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Ürün Fiyatı</label>
+        <input type="number" class="form-control" asp-for="productPrice">
+    </div>
+    
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

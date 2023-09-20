@@ -1,0 +1,39 @@
+﻿@model StockExampleApp.Entity.ProductList
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Ürün Kodu</th>
+            <th scope="col">Ürün Adı</th>
+            <th scope="col">Stok Adedi</th>
+            <th scope="col">Birim Fiyatı</th>
+            <th scope="col">Rapor</th>
+            <th scope="col">Stoktan Düş</th>
+            <th scope="col">Stok Ekle</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+       @foreach (var item in Model.productList)
+        {
+            <tr>
+                <td> @item.productId</td>
+                <td>@item.productName</td>
+                <td>@item.productQuantity</td>
+                <td>@item.productPrice</td>
+                <td><a asp-action="VievHistory" asp-route-id="@item.productId">Goruntule</a></td>
+                <td><a asp-action="Edit" asp-route-id="@item.productId">Stoktan Düş</a></td>
+                <td><a asp-action="AddStock" asp-route-id="@item.productId">Stok Ekle</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="btn-group">
+    <form method="get" asp-controller="Product" asp-action="AllReports">
+        <button type="submit" class="btn btn-primary me-2">Bütün Raporlar</button>
+    </form>
+    <form method="post" asp-controller="Product" asp-action="DownloadExcel">
+        <button type="submit" class="btn btn-primary">Excel Download</button>
+    </form>
+</div>
