@@ -26,7 +26,7 @@ namespace StockExampleApp.Controllers
         [HttpPost]
         public async Task<IActionResult> Add(Product product)
         {
-            if (product.productId !=0)
+            if (product !=null)
             {
                 await context.Products.AddAsync(product);
                 await context.SaveChangesAsync();
